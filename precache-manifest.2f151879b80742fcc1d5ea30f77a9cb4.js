@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3e56fcb0846685141eed08780b389020",
+    "revision": "27503fc415963882f97a11c8c33a0652",
     "url": "/majabba/index.html"
   },
   {
-    "revision": "bec76a69b2c53c4fc7cc",
+    "revision": "800789fc28e46e9c4edf",
     "url": "/majabba/static/css/main.7a3eeba8.chunk.css"
   },
   {
-    "revision": "d2e7a3b09987e896a61c",
-    "url": "/majabba/static/js/2.8ad612f3.chunk.js"
+    "revision": "adec46fbb8bf58f9fe47",
+    "url": "/majabba/static/js/2.d39c5e64.chunk.js"
   },
   {
     "revision": "3e7eb0c51ce474724fe2295510ac9693",
-    "url": "/majabba/static/js/2.8ad612f3.chunk.js.LICENSE.txt"
+    "url": "/majabba/static/js/2.d39c5e64.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bec76a69b2c53c4fc7cc",
-    "url": "/majabba/static/js/main.0849fa59.chunk.js"
+    "revision": "800789fc28e46e9c4edf",
+    "url": "/majabba/static/js/main.3a10ce0b.chunk.js"
   },
   {
     "revision": "382124a0378e5751cf85",
