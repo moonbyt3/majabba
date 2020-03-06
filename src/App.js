@@ -52,7 +52,7 @@ function App() {
     return xxtea.encrypt(text, password);
   }
   const decrypt = () => {
-    return xxtea.decrypt(encryptedText, password);
+    return xxtea.decrypt(text, password);
   }
 
   return (
