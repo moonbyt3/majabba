@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import xxtea from 'xxtea';
+import sjcl from 'sjcl';
 
 import './App.scss';
 
@@ -49,10 +49,10 @@ function App() {
     setText(e.target.value);
   } 
   const encrypt = () => {
-    return xxtea.encrypt(text, password);
+    return sjcl.encrypt(password, text);
   }
   const decrypt = () => {
-    return xxtea.decrypt(text, password);
+    return sjcl.decrypt(password, text);
   }
 
   return (
