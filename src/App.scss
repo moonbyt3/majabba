@@ -1,0 +1,63 @@
+body {
+  height: 100%;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.App {
+  
+}
+
+input,textarea {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  background: #212121 !important;
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  resize: none;
+  &::placeholder {
+    color: white;
+  }
+}
+.crypto-form {
+  display: block;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.btn {
+  display: block;
+  padding: 5px 25px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 2px;
+  color: white;
+  transition: .3s ease;
+  text-transform: uppercase;
+  margin: 0 auto;
+  &:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+  }
+}
+.copy {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 15px;
+  background-color: #388E3C;
+  padding: 7px;
+}

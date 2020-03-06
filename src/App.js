@@ -1,12 +1,26 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import xxtea from 'xxtea';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   const [text, setText] = useState('');
   const [password, setPassword] = useState('');
   const [encryptedText, setEncryptedText] = useState('');
+  const [encryptionFinished, setEncryptionFinished] = useState(false);
+  
+  const [copySuccess, setCopySuccess] = useState('');
+  const textAreaRef = useRef(null);
+
+  function copyToClipboard(e) {
+    e.preventDefault();
+    textAreaRef.current.select();
+    document.execCommand('copy');
+    // This is just personal preference.
+    // I prefer to not show the the whole text area selected.
+    e.target.focus();
+    setCopySuccess('Copied!');
+  };
 
   function handleEncrypt(e) {
     e.preventDefault();
@@ -14,17 +28,18 @@ function App() {
       let enc = encrypt();
       setEncryptedText(enc);
       setText(enc);
+      setEncryptionFinished(true);
     } else {
       alert('enter password first');
     }
   }
   function handleDecrypt(e) {
     e.preventDefault();
-    if (password !== '') {
+    if (password !== '' && text !== '') {
       let dec = decrypt();
       setText(dec);
     } else {
-      alert('enter password first');
+      alert('Please fill all fields');
     }
   }
   const handlePasswordChange = (e) => {
@@ -36,18 +51,23 @@ function App() {
   const encrypt = () => {
     return xxtea.encrypt(text, password);
   }
-
   const decrypt = () => {
-    return xxtea.decrypt(text, password);
+    return xxtea.decrypt(encryptedText, password);
   }
-  
+
   return (
     <div className="App">
-      <form >
-        <label htmlFor="pass">
-          <input type="text" id="pass" value={password} onChange={handlePasswordChange}/>
-        </label>
-        <br/>
+      <h1>Majabba</h1>
+      <h4>Crypt your messages</h4>
+      <form className="crypto-form">
+        <input
+          type="text"
+          id="pass"
+          value={password}
+          onChange={handlePasswordChange}
+          placeholder="Password"
+        />
+        
         <textarea 
           name="text"
           id="text"
@@ -55,10 +75,23 @@ function App() {
           rows="10"
           value={text}
           onChange={handleTextChange}
+          ref={textAreaRef}
         />
-        <br/>
-        <button type="submit" onClick={handleEncrypt}>Encrypt</button>
-        <button type="submit" onClick={handleDecrypt}>Decrypt</button>
+        {
+          /* Logical shortcut for only displaying the 
+            button if the copy command exists */
+          encryptionFinished &&
+          <>
+            <div className="btn-wrap">
+              <button className="btn" onClick={copyToClipboard}>Copy text to clipboard</button> 
+            </div>
+            {copySuccess && <div className="copy">{copySuccess}</div>}
+          </>
+        }
+        <div className="btn-wrap">
+          <button type="submit" className="btn" onClick={handleEncrypt}>Encrypt</button>
+          <button type="submit" className="btn" onClick={handleDecrypt}>Decrypt</button>
+        </div>
       </form>
     </div>
   );
