@@ -1,12 +1,12 @@
 import React, {useState, useRef} from 'react';
-import sjcl from 'sjcl';
+import CryptoJS from 'crypto-js';
 
 import './App.scss';
 
 function App() {
+  
   const [text, setText] = useState('');
   const [password, setPassword] = useState('');
-  const [encryptedText, setEncryptedText] = useState('');
   const [encryptionFinished, setEncryptionFinished] = useState(false);
   
   const [copySuccess, setCopySuccess] = useState('');
@@ -26,7 +26,6 @@ function App() {
     e.preventDefault();
     if (password !== '') {
       let enc = encrypt();
-      setEncryptedText(enc);
       setText(enc);
       setEncryptionFinished(true);
     } else {
@@ -49,10 +48,12 @@ function App() {
     setText(e.target.value);
   } 
   const encrypt = () => {
-    return sjcl.encrypt(password, text);
+    return CryptoJS.AES.encrypt(text, password).toString();
   }
   const decrypt = () => {
-    return sjcl.decrypt(password, text);
+    let bytes  = CryptoJS.AES.decrypt(text, password);
+    let originalText = bytes.toString(CryptoJS.enc.Utf8);
+    return originalText;
   }
 
   return (
