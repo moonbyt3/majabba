@@ -1,7 +1,7 @@
 body {
   height: 100%;
   background-color: #212121;
-  color: white;
+  color: rgb(224, 224, 224);
   text-align: center;
   font-size: 14px;
 }
@@ -15,7 +15,7 @@ input,textarea {
   width: 100%;
   margin: 0 auto;
   padding: 8px 10px;
-  background: #212121 !important;
+  background: #212121;
   color: white;
   border: 1px solid white;
   border-radius: 2px;
@@ -68,4 +68,13 @@ input,textarea {
   line-height: 1.2;
   letter-spacing: -1px;
   margin: 5px 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #212121 inset !important;
+    -webkit-text-fill-color: white !important;
+    caret-color: white;
 }
