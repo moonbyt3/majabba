@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/majabba/static/css/main.a4bd19e1.chunk.css",
+    "main.css": "/majabba/static/css/main.11561989.chunk.css",
     "main.js": "/majabba/static/js/main.fa652ff7.chunk.js",
     "main.js.map": "/majabba/static/js/main.fa652ff7.chunk.js.map",
     "runtime-main.js": "/majabba/static/js/runtime-main.94b339a6.js",
@@ -8,15 +8,15 @@
     "static/js/2.285c76e0.chunk.js": "/majabba/static/js/2.285c76e0.chunk.js",
     "static/js/2.285c76e0.chunk.js.map": "/majabba/static/js/2.285c76e0.chunk.js.map",
     "index.html": "/majabba/index.html",
-    "precache-manifest.2790fc3fcff9ca9541dd65bb60c8ae37.js": "/majabba/precache-manifest.2790fc3fcff9ca9541dd65bb60c8ae37.js",
+    "precache-manifest.d0eaf3da0f5739c5f751801f322ee677.js": "/majabba/precache-manifest.d0eaf3da0f5739c5f751801f322ee677.js",
     "service-worker.js": "/majabba/service-worker.js",
-    "static/css/main.a4bd19e1.chunk.css.map": "/majabba/static/css/main.a4bd19e1.chunk.css.map",
+    "static/css/main.11561989.chunk.css.map": "/majabba/static/css/main.11561989.chunk.css.map",
     "static/js/2.285c76e0.chunk.js.LICENSE.txt": "/majabba/static/js/2.285c76e0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.94b339a6.js",
     "static/js/2.285c76e0.chunk.js",
-    "static/css/main.a4bd19e1.chunk.css",
+    "static/css/main.11561989.chunk.css",
     "static/js/main.fa652ff7.chunk.js"
   ]
 }
