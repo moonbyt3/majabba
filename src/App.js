@@ -4,13 +4,16 @@ import CryptoJS from 'crypto-js';
 import './App.scss';
 
 function App() {
-  
   const [text, setText] = useState('');
   const [password, setPassword] = useState('');
   const [encryptionFinished, setEncryptionFinished] = useState(false);
   
   const [copySuccess, setCopySuccess] = useState('');
+  const [passwordInputActive, setPasswordInputActive] = useState(false);
+
   const textAreaRef = useRef(null);
+
+
 
   function copyToClipboard(e) {
     e.preventDefault();
@@ -46,7 +49,11 @@ function App() {
   }
   const handleTextChange = (e) => {
     setText(e.target.value);
-  } 
+  }
+  const handleInputFocus = () => {
+    setPasswordInputActive(true);
+  }
+  
   const encrypt = () => {
     return CryptoJS.AES.encrypt(text, password).toString();
   }
@@ -60,15 +67,19 @@ function App() {
     <div className="App">
       <h1>Majabba</h1>
       <h4>Crypt your messages</h4>
+      
       <form className="crypto-form">
         <input
           type="text"
           id="pass"
           value={password}
           onChange={handlePasswordChange}
+          onFocus={handleInputFocus}
           placeholder="Password"
         />
-        
+        <div className="tips">
+          {passwordInputActive && <div className="tips-pass">Strong password: At least 6 characters + numbers + signs</div>}
+        </div>
         <textarea 
           name="text"
           id="text"

@@ -14,8 +14,7 @@ input,textarea {
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 10px 15px;
-  margin-bottom: 15px;
+  padding: 8px 10px;
   background: #212121 !important;
   color: white;
   border: 1px solid white;
@@ -35,18 +34,19 @@ input,textarea {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 .btn {
   display: block;
-  padding: 5px 25px;
+  margin: 0 auto;
+  padding: 10px 25px;
+  color: white;
+  line-height: 1;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 2px;
-  color: white;
-  transition: .3s ease;
   text-transform: uppercase;
-  margin: 0 auto;
+  transition: .3s ease;
   &:hover {
     color: black;
     background-color: white;
@@ -60,4 +60,12 @@ input,textarea {
   margin-bottom: 15px;
   background-color: #388E3C;
   padding: 7px;
+}
+
+.tips {
+  // text-align: left;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 5px 0;
 }
